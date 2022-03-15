@@ -23,15 +23,15 @@ score = 0
 #varibale what counts seconds
 seconds = time.time()
 
-#boolean variable what turns True if players fails the game
+#boolean variable which turns True if players fails the game
 failed = False
 
-#boolean variable what checks, if meteorite is spawned first time
+#boolean variable which checks, if meteorite is spawned first time
 firstMeteor2 = False
 firstMeteor3 = False
 
 #FUNCTIONS
-#function what turns pixels on from players position
+#function which turns pixels on from players position
 def movePlayer():
   sense.set_pixel(playerPosLeft, 7, blue)
   sense.set_pixel(playerPosRight, 7, blue)
@@ -41,7 +41,7 @@ def clearPreviousPos():
   sense.set_pixel(playerPosLeft, 7, clear)
   sense.set_pixel(playerPosRight, 7, clear)
 
-#function what keeps up the healthbar
+#function which keeps up the healthbar
 def healthBar(currentHealth):
   i = currentHealth * 2 + 1
 #turning pixels of from healthbar based on current health
@@ -72,7 +72,7 @@ class Meteorite:
     self.firstTime = True
     self.x = x
     self.y = y
-#function that refresh meteorites position (making them constantly fall)
+#function which refresh meteorites position (making them constantly fall)
 #and regenerates them if they go out of borders
   def refresh(self):
     global health
@@ -108,7 +108,7 @@ while True:
   if health == 0:
     failed = True
   
-#cheks if player has failed the game
+#check if player has failed the game
   if failed:
 #shows your score in senseHat screen
     sense.show_message("Score:", text_colour=red)
